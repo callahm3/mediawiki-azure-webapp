@@ -1,4 +1,4 @@
-FROM mjclottery/php-azure-web-app
+FROM mjclottery/php-azure-webapp
 
 # switch working directory
 WORKDIR /var/www/html
