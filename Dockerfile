@@ -25,39 +25,58 @@ RUN set -eux; \
 	cd mediawiki-extensions-Wikibase; \
 	git submodule update --init --recursive; \
 	cd ..; \
-	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-InputBox.git; \
-	cd mediawiki-extensions-InputBox; \
-	git submodule update --init --recursive; \
-	cd ..; \
+	mv mediawiki-extensions-Wikibase Wikibase; \
+	#
+	#
+	# git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-InputBox.git; \
+	# cd mediawiki-extensions-InputBox; \
+	# git submodule update --init --recursive; \
+	# cd ..; \
 	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-TemplateData.git; \
 	cd mediawiki-extensions-TemplateData; \
 	git submodule update --init --recursive; \
 	cd ..; \
+	mv mediawiki-extensions-TemplateData TemplateData; \
+	#
+	#
 	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git; \
 	cd mediawiki-extensions-CirrusSearch; \
 	git submodule update --init --recursive; \
 	cd ..; \
-	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-Cite.git; \
-	cd mediawiki-extensions-Cite; \
-	git submodule update --init --recursive; \
-	cd ..; \
+	mv mediawiki-extensions-CirrusSearch CirrusSearch; \
+	#
+	#
+	# git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-Cite.git; \
+	# cd mediawiki-extensions-Cite; \
+	# git submodule update --init --recursive; \
+	# cd ..; \
 	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-TemplateStyles.git; \
 	cd mediawiki-extensions-TemplateStyles; \
 	git submodule update --init --recursive; \
 	cd ..; \
+	mv mediawiki-extensions-TemplateStyles TemplateStyles; \
+	#
+	#
 	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-TemplateWizard.git; \
 	cd mediawiki-extensions-TemplateWizard; \
 	git submodule update --init --recursive; \
 	cd ..; \
+	mv mediawiki-extensions-TemplateWizard TemplateWizard; \
+	#
+	#
 	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-WikibaseCirrusSearch.git; \
 	cd mediawiki-extensions-WikibaseCirrusSearch; \
 	git submodule update --init --recursive; \
 	cd ..; \
+	mv mediawiki-extensions-WikibaseCirrusSearch WikibaseCirrusSearch; \
+	#
+	#
 	git clone --single-branch --branch "REL1_34" --depth=1 https://github.com/wikimedia/mediawiki-extensions-Elastica.git; \
 	cd mediawiki-extensions-Elastica; \
 	git submodule update --init --recursive; \
-	cd .. \
-	; 
+	cd ..; \
+	mv mediawiki-extensions-Elastica Elastica \
+	;
 
 # have composer associate extensions and install dependencies
 RUN php /usr/local/bin/composer.phar install --no-dev
