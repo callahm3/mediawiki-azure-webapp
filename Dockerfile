@@ -81,6 +81,10 @@ COPY docker-entrypoint.sh /dockerfiles/docker-entrypoint.sh
 # COPY config/userlist.txt /etc/pgbouncer/userlist.txt
 # COPY config/custom_pgbouncer.ini /etc/pgbouncer/custom_pgbouncer.ini
 
+RUN set -eux; \
+	mv /var/www/html/images /var/www/html/azure_install_images\
+	;
+
 # expose web port and ssh port
 EXPOSE 8080 2222
 
