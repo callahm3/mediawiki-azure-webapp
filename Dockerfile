@@ -60,7 +60,7 @@ RUN set -eux; \
 	; 
 
 # have composer associate extensions and install dependencies
-#RUN php /usr/local/bin/composer.phar install --no-dev
+RUN php /usr/local/bin/composer.phar install --no-dev
 
 # change ownership to nginx
 RUN chown -R nginx:nginx /var/www/ && \
